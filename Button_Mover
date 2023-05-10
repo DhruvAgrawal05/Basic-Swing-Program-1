@@ -1,0 +1,35 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.Random;
+
+public class Lab7Q4 extends JFrame {
+    private JButton button;
+
+    public Lab7Q4() {
+        super("Button Move");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(300, 200);
+
+        JPanel panel = new JPanel();
+        getContentPane().add(panel);
+
+        button = new JButton("Click Me");
+        panel.add(button);
+
+        button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                int x = new Random().nextInt(getContentPane().getWidth() - button.getWidth());
+                int y = new Random().nextInt(getContentPane().getHeight() - button.getHeight());
+                button.setLocation(x, y);
+            }
+        });
+
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        Lab7Q4 frame = new Lab7Q4();
+    }
+}
