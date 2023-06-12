@@ -1,0 +1,45 @@
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.*;
+
+import java.awt.event.ActionListener;
+
+import javax.awt.*;
+
+public class TabbedPaneExample
+{
+    public static void main(String[] args) 
+    {
+      JFrame frame = new JFrame("My Frame");
+      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+  
+      JRadioButton r1 = new JRadioButton("C");
+      JRadioButton r2 = new JRadioButton("C++");
+      JRadioButton r3 = new JRadioButton("Java");
+
+      frame.add(r1);
+      frame.add(r2);
+      frame.add(r3);
+      
+      //ButtonGroup g1 = new ButtonGroup();
+      //g1.add(r1);
+    //   g1.add(r2);
+    //   g1.add(r3);
+
+      JTabbedPane p1 = new JTabbedPane();
+
+      p1.addTab("Langauges", r1);
+      p1.addTab("Gender", new JLabel("Languages"));
+      p1.addTab("Name", new JLabel("Languages"));
+  
+              
+      
+      frame.add(p1);
+      //frame.add(g1);
+      frame.setSize(400, 400);
+      frame.setVisible(true);
+  } 
+}
+  
