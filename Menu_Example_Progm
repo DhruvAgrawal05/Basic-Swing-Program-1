@@ -1,0 +1,39 @@
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JMenuBar;
+
+public class MenuExampleProgm{
+    public static void main(String [] args){
+        JFrame f = new JFrame("Menu Example");
+        f.setLayout(null);
+        f.setSize(400, 400);
+        
+        JMenu m1 = new JMenu("File");
+        m1.add(new JMenuItem("Save"));
+        m1.add(new JMenuItem("Close"));
+
+        JMenu m2 = new JMenu("Edit");
+        m2.add(new JMenuItem("Undo"));
+
+        JMenuBar b1 = new JMenuBar();
+        b1.add(m1);
+        b1.add(m2);
+        //b1.setLocation(0, 0);;
+
+        JLabel l1 = new JLabel("Enter Text");
+        l1.setSize(100, 10);
+        l1.setLocation(100, 300);
+        f.add(l1);
+
+
+
+        f.setJMenuBar(b1);
+        f.setVisible(true);
+
+
+    }
+}
